@@ -1,3 +1,17 @@
+## Component Preview:
+
+Normal View:
+
+![image](https://github.com/SaiBarathR/folder-file-management/assets/58382813/1664d019-26da-4656-b727-17b4ef51b0d2)
+
+Edit View:
+
+![image](https://github.com/SaiBarathR/folder-file-management/assets/58382813/4592194d-59e7-477b-bd8f-616af4e7a6f2)
+
+Toolbar Options:
+
+![image](https://github.com/SaiBarathR/folder-file-management/assets/58382813/8b8da1ad-7663-4600-bc6b-eb23b8ed2f2e)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
