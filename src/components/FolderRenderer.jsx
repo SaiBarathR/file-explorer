@@ -10,10 +10,6 @@ export default function FolderRender({ fileStructure, insertData, editData, remo
     const [addNewItem, setAddNewItem] = useState({ type: 'file', show: false })
     const [isEdit, setIsEdit] = useState(false)
 
-    useEffect(() => {
-        addNewItem.show && isEdit && setIsEdit(false)
-    }, [addNewItem, isEdit])
-
     const handleInsert = (value) => {
         if (value.trim().length > 0) {
             insertData(value, addNewItem.type, fileStructure.id)
@@ -23,7 +19,7 @@ export default function FolderRender({ fileStructure, insertData, editData, remo
 
     const handleEdit = (value) => {
         if (value.trim().length > 0) {
-            editData(value)
+            editData(fileStructure.id, value)
         }
         setIsEdit(false)
     }
@@ -31,7 +27,7 @@ export default function FolderRender({ fileStructure, insertData, editData, remo
     const handleDeleteFolder = () => removeData(fileStructure.id);
 
     return <div className="flex flex-col gap-1">
-        <div className="flex gap-2 min-w-[250px] items-center" onMouseEnter={() => setIsMouseOverItem(true)} onMouseLeave={() => setIsMouseOverItem(false)}>
+        <div className="flex gap-2 min-w-[350px] items-center" onMouseEnter={() => setIsMouseOverItem(true)} onMouseLeave={() => setIsMouseOverItem(false)}>
             {fileStructure.isFolder ? '📁' : <InsertDriveFileOutlinedIcon className="max-h-[20px]" />}
             {isEdit ? <input autoFocus
                 className="outline-none border rounded-lg p-1 pl-2"
