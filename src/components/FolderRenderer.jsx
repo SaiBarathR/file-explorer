@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined';
 import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
@@ -34,9 +34,7 @@ export default function FolderRender({ fileStructure, insertData, editData, remo
                 onKeyDown={({ key, target: { value } }) => key === "Enter" && handleEdit(value)}
                 onBlur={({ target: { value } }) => handleEdit(value)}
                 defaultValue={fileStructure.name}
-            />
-                :
-                <p className="flex flex-grow">{fileStructure.name}</p>}
+            /> : <p className="flex flex-grow">{fileStructure.name}</p>}
             {isMouseOverItem && <>
                 {fileStructure.isFolder && <Tooltip title="Create new folder">
                     <CreateNewFolderOutlinedIcon className="cursor-pointer" onClick={() => setAddNewItem((prev) => ({ type: 'folder', show: !prev.show }))} />
